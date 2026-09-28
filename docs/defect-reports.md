@@ -96,3 +96,16 @@ all, and the message gives no clue why. On a normal install it blocks legitimate
 internal domains and test data.
 
 **Covered by** `tests/email-validation.spec.ts`.
+
+---
+
+## Rules that hold
+
+Recorded because a study that only lists faults is not a test result.
+
+- The tax rate form accepts a normal rate and refuses a negative rate, a rate
+  above one hundred per cent, and a rate that is not a number. All four answers
+  are correct, and all four matter: every invoice built on a corrupt rate is
+  wrong in a way that only shows up at reconciliation.
+- A customer saves once the address is one the validator accepts, and the record
+  is created with the identifier returned in the address bar.
