@@ -1,0 +1,16 @@
+{
+  "name": "accounting-defect-study",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "playwright test",
+    "report": "playwright show-report"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "MIT",
+  "description": "A defect study of Akaunting 3.1.21: two reproducible defects and the root cause behind both",
+  "devDependencies": {
+    "@playwright/test": "^1.63.0"
+  }
+}
