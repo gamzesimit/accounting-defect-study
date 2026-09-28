@@ -109,3 +109,6 @@ Recorded because a study that only lists faults is not a test result.
   wrong in a way that only shows up at reconciliation.
 - A customer saves once the address is one the validator accepts, and the record
   is created with the identifier returned in the address bar.
+- The currency rate form refuses a rate of zero, a negative rate, and a rate that
+  is not a number. A rate multiplies every figure converted through it, so a bad
+  one is not a single wrong number, it is a wrong ledger.
