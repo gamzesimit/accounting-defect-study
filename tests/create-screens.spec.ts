@@ -27,7 +27,7 @@ test.describe('AK-001 every create screen must open', () => {
     await page.waitForLoadState('networkidle');
     test.skip(
       page.url().includes('/settings/taxes/create'),
-      'the plan cache workaround is in place, so AK-001 cannot be observed'
+      'the plan cache workaround is in place, so AK-001 cannot be observed',
     );
   });
 
@@ -35,8 +35,9 @@ test.describe('AK-001 every create screen must open', () => {
     test(`the ${route.name} form opens instead of redirecting`, async ({ page }) => {
       await page.goto(route.path);
       await page.waitForLoadState('networkidle');
-      expect(page.url(), `${route.path} must not redirect away from the form`)
-        .toContain(route.path.split('?')[0]);
+      expect(page.url(), `${route.path} must not redirect away from the form`).toContain(
+        route.path.split('?')[0],
+      );
     });
   }
 });

@@ -26,12 +26,15 @@ test.describe('AK-002 email validation', () => {
 
     const responses: number[] = [];
     page.on('response', (r) => {
-      if (r.request().method() === 'POST' && r.url().includes('/sales/customers')) responses.push(r.status());
+      if (r.request().method() === 'POST' && r.url().includes('/sales/customers'))
+        responses.push(r.status());
     });
 
     await page.getByRole('button', { name: 'Save', exact: true }).first().click();
     await page.waitForTimeout(4000);
-    expect(responses[0], 'example.com is reserved for documentation and is a valid address').toBe(200);
+    expect(responses[0], 'example.com is reserved for documentation and is a valid address').toBe(
+      200,
+    );
   });
 
   test('an address on a domain with live mail records is accepted', async ({ page }) => {
