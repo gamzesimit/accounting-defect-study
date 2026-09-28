@@ -13,6 +13,22 @@ not a tax rate. The screens redirect to the Users page with no message. The caus
 is a middleware that asks the vendor how many records the account is allowed to
 have, and treats no answer as no permission.
 
+## Findings at a glance
+
+| Id     | Area                | Severity | What happens                                                                                                                                                                                                  |
+| ------ | ------------------- | -------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| AK-001 | Every create screen | Blocker  | On a fresh install no record can be created. The screens redirect to the Users page with no message. Traced to a middleware that asks a vendor service for plan limits and treats no answer as no permission. |
+| AK-002 | Email fields        | High     | A correctly formed address on a domain without live mail records is refused, and the message blames the address rather than the lookup.                                                                       |
+
+Both share one cause: an outbound call the user cannot see, failing silently.
+
+## Rules that hold
+
+The tax rate form and the currency rate form both refuse the values that would
+corrupt a ledger: negative rates, rates above one hundred per cent, rates of
+zero, and anything that is not a number. Those are recorded in the reports too,
+because a study that lists only faults is not a test result.
+
 Full reports: [docs/defect-reports.md](docs/defect-reports.md)
 
 ## Running it
