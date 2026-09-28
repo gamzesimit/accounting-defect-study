@@ -17,6 +17,7 @@ succeed it fails silently or blames the wrong thing.
 **Status:** Reproducible on every attempt
 
 **Steps**
+
 1. Install from the official container image and finish the setup wizard.
 2. Sign in as the administrator created during setup.
 3. Open any of these addresses:
@@ -70,6 +71,7 @@ the forms open. It touches no application source.
 **Status:** Reproducible on every attempt
 
 **Steps**
+
 1. Open a customer form.
 2. Enter a name and the address `billing@example.com`.
 3. Save.
